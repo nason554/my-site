@@ -3,13 +3,14 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="themes/light/style.css" id="styles-js">
     <link rel="stylesheet" href="style.css">
     <title>Портфолио Junior верстальщика</title>
   </head>
 
   <body>
     <header class="page-header">
-      <div class="container">
+      <div class="container" style="display: flex; align-items: center; justify-content: flex-end;">
         <a
           class="header-email"
           href="mailto:mysite999@gmail.com"
@@ -22,6 +23,9 @@
         >
           +7(999)999-99-99
         </a>
+        <button class="theme-btn" id="styles-btn-js">
+          <img src="img/emoji.png" alt="">
+        </button>
       </div>
     </header>
 
@@ -43,6 +47,15 @@
           сайтов. Посмотрим, что из этого получится.</p>
         <h3>Чем могу быть полезна</h3>
         <p>Текст о том, чем могу быть полезна.</p>
+        <div class="skills">
+          <h3>Мои навыки</h3>
+          <dl class="skills-list">
+            <dt class="skill-html">HTML</dt>
+            <dd class="level"><div style="width: 60%;">60%</div></dd>
+            <dt class="skill-css">CSS</dt>
+            <dd class="level"><div style="width: 40%;">40%</div></dd>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -77,5 +90,28 @@
         </a>
       </div>
     </footer>
+
+
+    <script>
+      var styleEl = document.getElementById('styles-js');
+      var btnEl = document.getElementById('styles-btn-js');
+      var currentTheme = 'light';
+      var currentBtnText = 'Темная тема';
+
+      // btnEl.innerText = currentBtnText;
+
+      btnEl.addEventListener('click', function() {
+        if (currentTheme === 'light') {
+          currentTheme = 'dark';
+          currentBtnText = 'Светлая тема';
+        } else {
+          currentTheme = 'light';
+          currentBtnText = 'Темная тема';
+        }
+
+        // btnEl.innerText = currentBtnText;
+        styleEl.setAttribute('href', 'themes/' + currentTheme +'/style.css');
+      })
+    </script>
   </body>
 </html>
