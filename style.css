@@ -25,3 +25,7 @@
   max-width: 1408px;
   text-align: right;
 }
+
+.heading, .subheading {
+  font-family: "Old Standard TT", "Times", "Times New Roman", serif;
+}
